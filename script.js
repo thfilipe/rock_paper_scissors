@@ -31,17 +31,34 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     let playerScore = 0;
     let computerScore = 0;
-    for (let i = 0; i < 5; i++) {
 
+    for (let i = 0; i < 5; i++) { // Play through 5 rounds
 
         let outcome = playRound();
         console.log(outcome)
-        if (outcome == "You Win! Rock beats Scissors" || outcome == "You Win! Paper beats Rock" || outcome == "You Win! Scissors beats Paper") {
+        if (outcome === "Tie!") {
+
+        } else if (outcome == "You Win! Rock beats Scissors" || outcome == "You Win! Paper beats Rock" || outcome == "You Win! Scissors beats Paper") {
             playerScore++;
+        } else {
+            computerScore++;
         }
 
     }
-    console.log(playerScore)
+    if (playerScore === computerScore) {
+        console.log("Player Score: " + playerScore)
+        console.log("Computer Score: " + computerScore)
+        console.log("Game is a Tie!")
+    } else if (playerScore > computerScore) {
+        console.log("Player Score: " + playerScore)
+        console.log("Computer Score: " + computerScore)
+        console.log("Player Wins!")
+    } else {
+        console.log("Player Score: " + playerScore)
+        console.log("Computer Score: " + computerScore)
+        console.log("Computer Wins!")
+    }
+
 }
 
 game()
