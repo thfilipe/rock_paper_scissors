@@ -45,17 +45,12 @@ function game() {
 
     }
     if (playerScore === computerScore) {
-        console.log("Player Score: " + playerScore)
-        console.log("Computer Score: " + computerScore)
-        console.log("Game is a Tie!")
+        console.log("Player Score: " + playerScore + "\nComputer Score: " + computerScore + "\nGame is a Tie!")
     } else if (playerScore > computerScore) {
-        console.log("Player Score: " + playerScore)
-        console.log("Computer Score: " + computerScore)
-        console.log("Player Wins!")
+        console.log("Player Score: " + playerScore + "\nComputer Score: " + computerScore + "\nPlayer Wins!")
     } else {
-        console.log("Player Score: " + playerScore)
-        console.log("Computer Score: " + computerScore)
-        console.log("Computer Wins!")
+        console.log("Player Score: " + playerScore + "\nComputer Score: " + computerScore + "\nComputer Wins!")
+
     }
 
 }
