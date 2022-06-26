@@ -6,9 +6,11 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
+
     playerSelection = prompt("Please type Rock, Paper or Scissors:").toLowerCase();
     computerSelection = computerPlay();
-    console.log("Player: " + playerSelection + " " + "Computer: " + computerSelection)
+    // console.log("Player: " + playerSelection + " " + "Computer: " + computerSelection)
+
     if (playerSelection === computerSelection) {
         return "Tie!"
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
@@ -25,4 +27,21 @@ function playRound(playerSelection, computerSelection) {
         return "You Lose! Scissors beats Paper"
     }
 }
-console.log(playRound());
+
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 0; i < 5; i++) {
+
+
+        let outcome = playRound();
+        console.log(outcome)
+        if (outcome == "You Win! Rock beats Scissors" || outcome == "You Win! Paper beats Rock" || outcome == "You Win! Scissors beats Paper") {
+            playerScore++;
+        }
+
+    }
+    console.log(playerScore)
+}
+
+game()
