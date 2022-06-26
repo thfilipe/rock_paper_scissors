@@ -9,7 +9,6 @@ function playRound(playerSelection, computerSelection) {
 
     playerSelection = prompt("Please type Rock, Paper or Scissors:").toLowerCase();
     computerSelection = computerPlay();
-    // console.log("Player: " + playerSelection + " " + "Computer: " + computerSelection)
 
     if (playerSelection === computerSelection) {
         return "Tie!"
