@@ -1,20 +1,8 @@
 let playerScore = 0;
 let computerScore = 0;
 
-function scoring() {
-    const divPlayer = document.getElementById("player-score");
-    const divComputer = document.getElementById("computer-score");
-    if (caption.textContent == "Tie!") {
-        console.log("tie");
-    } else if (caption.textContent === 'You Win! Rock beats Scissors' || caption.textContent === "You Win! Paper beats Rock" || caption.textContent === "You Win! Scissors beats Paper") {
-        divPlayer.textContent = `Player Score: ${playerScore}`
-        playerScore++;
-    } else {
-        divComputer.textContent = `Computer Score: ${computerScore}`
-        computerScore++;
-    }
-}
-// player select buttons
+
+// player choice buttons
 const rockBtn = document.getElementById("rock");
 rockBtn.addEventListener("click", () => playRound("rock", computerPlay));
 const paperBtn = document.getElementById("paper");
@@ -22,7 +10,9 @@ paperBtn.addEventListener("click", () => playRound("paper", computerPlay));
 const scissorsBtn = document.getElementById("scissors");
 scissorsBtn.addEventListener("click", () => playRound("scissors", computerPlay));
 
-// computer random play
+const caption = document.getElementById("caption")
+
+// computer random choice
 function computerPlay() {
     const rockPaperScissors = ["rock", "paper", "scissors"]
     const random = Math.floor(Math.random() * rockPaperScissors.length)
@@ -30,10 +20,31 @@ function computerPlay() {
 
 }
 
-const caption = document.getElementById("caption")
+
+function scoring() {
+    const divPlayer = document.getElementById("player-score");
+    const divComputer = document.getElementById("computer-score");
+    if (caption.textContent == "Tie!") {
+        return;
+    } else if (caption.textContent === 'You Win! Rock beats Scissors' || caption.textContent === "You Win! Paper beats Rock" || caption.textContent === "You Win! Scissors beats Paper") {
+        playerScore++;
+        divPlayer.textContent = `Player Score: ${playerScore}`
+    } else {
+        computerScore++;
+        divComputer.textContent = `Computer Score: ${computerScore}`
+    }
+}
+
+function winner() {
+    if (playerScore == 5) {
+        caption.textContent = "Player Wins!";
+    } else if (computerScore == 5) {
+        caption.textContent = "Computer Wins!";
+    }
+}
+
 
 function playRound(playerSelection, computerSelection) {
-
     computerSelection = computerPlay();
 
     if (playerSelection === computerSelection) {
@@ -52,8 +63,16 @@ function playRound(playerSelection, computerSelection) {
         caption.textContent = "You Lose! Scissors beats Paper";
     }
     scoring();
+    if (playerScore == 5 || computerScore == 5) {
+        winner();
+    }
 
 }
+
+
+
+
+
 
 // function game() {
 
