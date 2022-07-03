@@ -16,23 +16,23 @@ function computerPlay() {
 
 
 function playRound(playerSelection, computerSelection) {
-
+    const caption = document.getElementById("caption")
     computerSelection = computerPlay();
 
     if (playerSelection === computerSelection) {
-        console.log("Tie!")
+        caption.textContent = "Tie!";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        console.log("You Win! Rock beats Scissors")
+        caption.textContent = 'You Win! Rock beats Scissors';
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        console.log("You Win! Paper beats Rock")
+        caption.textContent = "You Win! Paper beats Rock";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        console.log("You Win! Scissors beats Paper")
+        caption.textContent = "You Win! Scissors beats Paper";
     } else if (playerSelection === "rock" && computerSelection === "paper") {
-        console.log("You Lose! Paper beats Rock")
+        caption.textContent = "You Lose! Paper beats Rock";
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        console.log("You Lose! Rock beats Scissors")
+        caption.textContent = "You Lose! Rock beats Scissors";
     } else {
-        console.log("You Lose! Scissors beats Paper")
+        caption.textContent = "You Lose! Scissors beats Paper";
     }
 
 }
