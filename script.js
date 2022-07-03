@@ -20,7 +20,7 @@ function computerPlay() {
 
 }
 
-
+// player and computer scoring
 function scoring() {
     const divPlayer = document.getElementById("player-score");
     const divComputer = document.getElementById("computer-score");
@@ -35,6 +35,7 @@ function scoring() {
     }
 }
 
+// winner when 5 point is reached
 function winner() {
     if (playerScore == 5) {
         caption.textContent = "Player Wins!";
@@ -43,7 +44,7 @@ function winner() {
     }
 }
 
-
+// play a round of rock paper scissors
 function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
 
@@ -68,34 +69,5 @@ function playRound(playerSelection, computerSelection) {
     }
 
 }
-
-
-
-
-
-
-// function game() {
-
-
-//     for (let i = 0; i < 5; i++) { // Play through 5 rounds
-//         let outcome = caption.textContent;
-//         console.log(outcome)
-//         if (outcome === "Tie!") {
-//         } else if (outcome == "You Win! Rock beats Scissors" || outcome == "You Win! Paper beats Rock" || outcome == "You Win! Scissors beats Paper") {
-//             playerScore++;
-//         } else {
-//             computerScore++;
-//         }
-//     }
-//     if (playerScore === computerScore) {
-//         console.log("Player Score: " + playerScore + "\nComputer Score: " + computerScore + "\nGame is a Tie!")
-//     } else if (playerScore > computerScore) {
-//         console.log("Player Score: " + playerScore + "\nComputer Score: " + computerScore + "\nPlayer Wins!")
-//     } else {
-//         console.log("Player Score: " + playerScore + "\nComputer Score: " + computerScore + "\nComputer Wins!")
-
-//     }
-
-// }
 
 
